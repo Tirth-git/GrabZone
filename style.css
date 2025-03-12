@@ -1,3 +1,55 @@
+
+/*Header Start */
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 4px;
+    background:#001F3F;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+#navbar li {
+    list-style: none;
+    padding:3px 3px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #BFFF00;
+    transition: 0.03s ease;
+}
+#navbar li a:hover,
+#navbar li a.active{
+    color:#cce7d0;
+}
+#navbar li a.active::after,#navbar li a:hover::after{
+    content:"";
+    width:30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+}
+
+/*HOME PAGE */
+
 #hero h1 {
     font-size: 60px; /* Adjust the size as needed */
     font-weight: bold;
@@ -30,59 +82,6 @@
 .section-p1{
     padding: 40px 80px;
 }
-
-
-
-/*Header Start */
-
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 4px;
-    background: #e3e6f3;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-#navbar {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
-
-#navbar li {
-    list-style: none;
-    padding:3px 3px;
-    position: relative;
-}
-
-#navbar li a{
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.03s ease;
-}
-#navbar li a:hover,
-#navbar li a.active{
-    color: #088178;
-}
-#navbar li a.active::after,#navbar li a:hover::after{
-    content:"";
-    width:30%;
-    height: 2px;
-    background: #088178;
-    position: absolute;
-    bottom: -4px;
-    left:20px;
-}
-
-/*HOME PAGE */
 #hero {
     background-image: url("img/hero.png");
     height: 219vh;
@@ -163,72 +162,62 @@
     background-color: #fff2e5;
 }
 
-/*Store Page*/
+/*PRODUCT SHOWING*/
 
-/* Product Section
-#products {
-    
-    padding: 50px 80px;
-    background-color: #e33636;
-    text-align: center;
-}
-
-#products h2 {
-    font-size: 50px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.product-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.product {
-    width: 250px;
-    text-align: center;
+#nikepro{
     padding: 20px;
-    margin: 15px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    text-align: center;
+    background-color: #d1e8f2;
+    margin: 30px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    max-width: 400px;
 }
-
-.product:hover {
+#nike h2{
+    text-align: center;
+    font-size: 40px;
+    color:#C0FF00;
+    background-color: #003366;
+}
+#nikepro:hover{
+    transform: scale(1.05);
+    transition: 0.10s;
+}
+#nikepro button{
+    padding: 3px 10px;
+    box-shadow:0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: url(img/button.png);
+    background-color: #BFFF00;
+    border-radius: 10px;
+    font-size: 30px;
+}
+#nikepro button:hover{
     transform: scale(1.05);
 }
-
-.product img {
-    width: 100%;
-    border-radius: 8px;
+#products h1{
+    font-size: 40px;
+    text-align: center;
+    color: #C0FF00;
+    background-color:#003366 ;
 }
 
-.product h3 {
-    margin-top: 10px;
-    font-size: 20px;
-    color: #333;
+/*NIKE PRODUCTS*/
+#pro{
+    padding: 20px;
+    text-align: center;
+    background-color: #d1e8f2;
+    margin: 20px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    max-width: 400px;
+    max-height: 450px;
 }
-
-.product p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #088178;
+#pro h1{
+    margin: -7px 30px;
+    background-color: bisque;
+    background-image: url(img/button.png);
+    font-size: 30px;
 }
-
-.product button {
-    background-color: #088178;
-    color: white;
-    font-size: 16px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+#pro img{
+    margin: 20px 20px;
 }
-
-.product button:hover {
-    background-color: #066c60;
-}
-*/

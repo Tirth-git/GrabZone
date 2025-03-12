@@ -1,0 +1,234 @@
+#hero h1 {
+    font-size: 60px; /* Adjust the size as needed */
+    font-weight: bold;
+}
+
+#hero h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 5px; /* Reduce space between h1 and h2 */
+}
+
+#hero p {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+#hero button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #088178;
+    color: white;
+        border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#hero button:hover {
+    background-color: #066c60;
+}
+.section-p1{
+    padding: 40px 80px;
+}
+
+
+
+/*Header Start */
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 4px;
+    background: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+#navbar li {
+    list-style: none;
+    padding:3px 3px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.03s ease;
+}
+#navbar li a:hover,
+#navbar li a.active{
+    color: #088178;
+}
+#navbar li a.active::after,#navbar li a:hover::after{
+    content:"";
+    width:30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+}
+
+/*HOME PAGE */
+#hero {
+    background-image: url("img/hero.png");
+    height: 219vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 15% right 25;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+#hero h2{
+    color: #088178;
+}
+#hero p{
+    color:brown;
+}
+#hero h1{
+    color: blueviolet;
+}
+#hero button{
+    background-image: url(img/button.png);
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding:14px 80px 14px 65px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+#feature{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+#feature .fe-box:hover{
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.01);
+}
+
+#feature .fe-box img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#feature .fe-box h3{
+    display:inline-block;
+    padding:9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color:#fddde4;
+}
+#feature .fe-box:nth-child(2) h3 {
+    background-color: #cdebbc;
+}
+#feature .fe-box:nth-child(3) h3 {
+    background-color: #d1e8f2;
+}
+#feature .fe-box:nth-child(4) h3 {
+    background-color: #cdd4f8;
+}
+#feature .fe-box:nth-child(5) h3 {
+    background-color: #f6dbf6;
+}
+#feature .fe-box:nth-child(6) h3 {
+    background-color: #fff2e5;
+}
+
+/*Store Page*/
+
+/* Product Section
+#products {
+    
+    padding: 50px 80px;
+    background-color: #e33636;
+    text-align: center;
+}
+
+#products h2 {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.product p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #088178;
+}
+
+.product button {
+    background-color: #088178;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product button:hover {
+    background-color: #066c60;
+}
+*/

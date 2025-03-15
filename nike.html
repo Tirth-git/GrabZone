@@ -4,10 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrabStore</title>
     <link rel="stylesheet" href="style.css">
+    <script src="store.js"></script>
+    <script defer src="cart.js"></script>
 </head>
 <body>
     <section id="header">
-        <a href="#"><img src="img/logo.png" class="logo" alt="" height="90"></a>
+        <a href="index.html"><img src="img/logo.png" class="logo" alt="" height="90"></a>
         <div>
             <ul id="navbar">
                 <li><a class="active" href="index.html">Home</a></li>
@@ -18,17 +20,57 @@
             </ul>
         </div>
     </section>
-
+    
+    <h2>Nike Products</h2>
     <section id="nike">
-        <h2>Nike Products</h2>
         <div id="pro">
             <h1>AIR</h1>
-            <img src="img/air.png" alt="" height="400px">
+            <img class="pro-item" src="img/air.png" alt="" width="400px" height="400">
             <h3>₹10,000.00</h3>
-            <a href="cart.html">
-                <img id="f1" src="img/shopping_cart_icon_transparent.png" alt="" height="100px"> 
-            </a>            
+            <img class="cart-icon" src="img/shopping_cart_icon_transparent.png" height="60px" 
+                 data-name="AIR" data-price="10000" data-img="img/air.png">          
+        </div>    
+    
+        <div id="pro">
+            <h1>Blazer</h1>
+            <img class="pro-item" src="img/blazer2.png" alt="" width="400px" height="400">
+            <h3>₹8,000.00</h3>
+            <img class="cart-icon" src="img/shopping_cart_icon_transparent.png" height="60px"
+                 data-name="Blazer" data-price="8000" data-img="img/blazer2.png">           
+        </div> 
+    
+        <div id="pro">
+            <h1>Crater</h1>
+            <img class="pro-item" src="img/crater.png" alt="" width="400px" height="400">
+            <h3>₹12,000.00</h3>
+            <img class="cart-icon" src="img/shopping_cart_icon_transparent.png" height="60px"
+                 data-name="Crater" data-price="12000" data-img="img/crater.png">          
+        </div> 
+    
+        <div id="pro">
+            <h1>Hippie</h1>
+            <img class="pro-item" src="img/hippie.png" alt="" width="400px" height="400">
+            <h3>₹7,000.00</h3>
+            <img class="cart-icon" src="img/shopping_cart_icon_transparent.png" height="60px"
+                 data-name="Hippie" data-price="7000" data-img="img/hippie.png">          
+        </div>
+    
+        <div id="pro">
+            <h1>Jordan</h1>
+            <img class="pro-item" src="img/jordan.png" alt="" width="400px" height="400">
+            <h3>₹20,000.00</h3>
+            <img class="cart-icon" src="img/shopping_cart_icon_transparent.png" height="60px"
+                 data-name="Jordan" data-price="20000" data-img="img/jordan.png">          
+        </div>
+    
+        <div id="pro">
+            <h1>Air Max Dn8</h1>
+            <img class="pro-item" src="img/AIR+MAX+DN8.jpg" alt="" width="400px" height="350">
+            <h3>Coming Soon</h3>
+            <img class="cart-icon" src="img/shopping_cart_icon_transparent.png" height="60px"
+                 data-name="Air Max Dn8" data-price="0" data-img="img/AIR+MAX+DN8.jpg">          
         </div>
     </section>
+    
 </body>
 </html>

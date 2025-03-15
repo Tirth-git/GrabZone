@@ -1,6 +1,4 @@
-
 /*Header Start */
-
 #header {
     display: flex;
     align-items: center;
@@ -49,41 +47,8 @@
 }
 
 /*HOME PAGE */
-
-#hero h1 {
-    font-size: 60px; /* Adjust the size as needed */
-    font-weight: bold;
-}
-
-#hero h2 {
-    font-size: 40px;
-    font-weight: bold;
-    margin-top: 5px; /* Reduce space between h1 and h2 */
-}
-
-#hero p {
-    font-size: 20px;
-    margin-top: 5px;
-}
-
-#hero button {
-    font-size: 18px;
-    padding: 10px 20px;
-    background-color: #088178;
-    color: white;
-        border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#hero button:hover {
-    background-color: #066c60;
-}
-.section-p1{
-    padding: 40px 80px;
-}
-#hero {
-    background-image: url("img/hero.png");
+#hero{
+    background-image: url(img/hero.png);
     height: 219vh;
     width: 100%;
     background-size: cover;
@@ -91,27 +56,57 @@
     padding: 0 80px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: start;
     justify-content: center;
 }
+
+#hero h1{
+    font-size: 59px;
+    color: rgba(0, 0, 0, 0.847);
+    background: linear-gradient(to right, #ff8c00, #ff4500);
+    padding: 10px 15px;
+    border-radius: 13px;
+    font-family: 'Poppins', sans-serif;
+}
+#hero h1:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
 #hero h2{
-    color: #088178;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background: none;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right,#ff8c00,#ff4500);
+    padding: 10px 15px;
+}
+#hero h2:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05); 
+}
+#hero a{
+
+    background: linear-gradient(to right, #ff8c00, #ff4500);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+#hero a:hover{
+    background: #ff4500;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
 }
 #hero p{
-    color:brown;
-}
-#hero h1{
-    color: blueviolet;
-}
-#hero button{
-    background-image: url(img/button.png);
-    background-color: transparent;
-    color: #088178;
-    border: 0;
-    padding:14px 80px 14px 65px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color:rgba(0, 0, 0, 0.881);
+    text-align: center;
+    margin-top: 10px;
 }
 
 #feature{
@@ -120,7 +115,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 #feature .fe-box{
     width: 180px;
     text-align: center;
@@ -173,7 +167,7 @@
     border-radius: 20px;
     max-width: 400px;
 }
-#nike h2{
+h2{
     text-align: center;
     font-size: 40px;
     color:#C0FF00;
@@ -194,30 +188,82 @@
 #nikepro button:hover{
     transform: scale(1.05);
 }
-#products h1{
+#nameshow h3{
     font-size: 40px;
     text-align: center;
     color: #C0FF00;
     background-color:#003366 ;
 }
-
+#products{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 /*NIKE PRODUCTS*/
 #pro{
+    position: relative;
     padding: 20px;
     text-align: center;
     background-color: #d1e8f2;
-    margin: 20px 50px;
+    margin: 15px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     max-width: 400px;
     max-height: 450px;
 }
-#pro h1{
-    margin: -7px 30px;
-    background-color: bisque;
-    background-image: url(img/button.png);
-    font-size: 30px;
+#pro:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
 }
-#pro img{
-    margin: 20px 20px;
+.cart-icon{
+    position: absolute;
+    left: 23px;
+    top: 367px;
+    width:100px;
+    height: 100;
+    background-color: white;
+    padding: 5px;    
+    border-radius: 20px;
 }
+.cart-icon:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.10);
+}
+#pro h3{
+    position: absolute;
+    left :150px;
+    top: 410;
+    font-size: 25;
+}
+#nike{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/*Cart Section*/
+#cart{
+    width: 80%; 
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#cart-items{
+    display: flex;
+    gap: 20px;
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d1e8f2;
+    padding: 15px;
+    border-radius: 20px;
+    text-align:center;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+

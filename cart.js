@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (cart[index].quantity > 1) {
                     cart[index].quantity -= 1;
                 } else {
-                    cart.splice(index, 1); // Remove if quantity is 1
+                    cart.splice(index, 1);
                 }
                 localStorage.setItem("cart", JSON.stringify(cart));
                 loadCart();
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button.addEventListener("click", (event) => {
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
                 let index = event.target.getAttribute("data-index");
-                cart.splice(index, 1); // Remove item
+                cart.splice(index, 1);
                 localStorage.setItem("cart", JSON.stringify(cart));
                 loadCart();
             });
@@ -78,6 +78,5 @@ document.addEventListener("DOMContentLoaded", () => {
             loadCart();
         });
     }
-
     loadCart();
 });

@@ -157,7 +157,6 @@
 }
 
 /*PRODUCT SHOWING*/
-
 #nikepro{
     padding: 20px;
     text-align: center;
@@ -266,8 +265,7 @@ h2{
     margin: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-
+/*Contect Page*/
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -375,28 +373,161 @@ body {
   .btn:hover {
     opacity: 0.85;
   }
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-}
-.contact-section {
-  flex: 1;
-}
-
-footer {
+  /*Checkout*/
+  .popup-overlay {
+    display: none;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
-    background-color: #002244;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    z-index: 1000; 
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
   }
   
-
+  .popup-content {
+    background: #003366;
+    border-radius: 12px;
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
   
+  .popup-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #BFFF00;
+    text-align: center;
+    border-bottom: 1px solid #BFFF00;
+    padding-bottom: 5px;
+  }
+  
+  .popup-content label {
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .popup-content input,
+  .popup-content select {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background-color: #f2f2f2;
+    color: #000;
+  }
+  
+  .row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .row > div {
+    flex: 1;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    gap: 10px;
+  }
+  
+  .submit-btn {
+    background-color: #BFFF00;
+    color: #111;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .cancel-btn {
+    background-color: #eee;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+
+  /*About Us*/
+  .about-hero {
+    background-color: #003366;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .about-hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .about-hero p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  #about.section-p1 {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    line-height: 1.8;
+  }
+
+  #about h2 {
+    font-size: 28px;
+    margin-top: 40px;
+  }
+
+  #about ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  #about ul li {
+    padding: 8px 0;
+  }
+
+/*Footer Page*/
+  .cart-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .cart-main {
+    flex: 1;
+    padding: 20px;
+  }
+  .custom-footer {
+    background-color: #062144;
+    color: #c6ff00;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: bold;
+  }
   

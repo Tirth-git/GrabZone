@@ -1,82 +1,104 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cartContainer = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-    const clearCartBtn = document.getElementById("clear-cart");
+  const cartContainer = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
 
-    function loadCart() {
+  function loadCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cartContainer.innerHTML = "";
+
+    let totalPrice = 0;
+
+    cart.forEach((item, index) => {
+      totalPrice += item.price * item.quantity;
+
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("cart-item");
+
+      cartItem.innerHTML = `
+        <img src="${item.img}" alt="${item.name}" width="100">
+        <div class="cart-details">
+            <h3>${item.name}</h3>
+            <p>Price: ₹${item.price}</p>
+            <div class="quantity">
+                <button class="decrease" data-index="${index}">-</button>
+                <span>${item.quantity}</span>
+                <button class="increase" data-index="${index}">+</button>
+            </div>
+            <button class="remove" data-index="${index}">Remove</button>
+        </div>
+      `;
+
+      cartContainer.appendChild(cartItem);
+    });
+
+    cartTotal.textContent = totalPrice;
+    attachEventListeners();
+  }
+
+  function attachEventListeners() {
+    document.querySelectorAll(".increase").forEach(button => {
+      button.addEventListener("click", (event) => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cartContainer.innerHTML = "";
+        let index = event.target.getAttribute("data-index");
+        cart[index].quantity += 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart();
+      });
+    });
 
-        let totalPrice = 0;
+    document.querySelectorAll(".decrease").forEach(button => {
+      button.addEventListener("click", (event) => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let index = event.target.getAttribute("data-index");
+        if (cart[index].quantity > 1) {
+          cart[index].quantity -= 1;
+        } else {
+          cart.splice(index, 1);
+        }
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart();
+      });
+    });
 
-        cart.forEach((item, index) => {
-            totalPrice += item.price * item.quantity;
+    document.querySelectorAll(".remove").forEach(button => {
+      button.addEventListener("click", (event) => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let index = event.target.getAttribute("data-index");
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart();
+      });
+    });
+  }
 
-            // Create cart item element
-            const cartItem = document.createElement("div");
-            cartItem.classList.add("cart-item");
+  loadCart();
+});
 
-            cartItem.innerHTML = `
-                <img src="${item.img}" alt="${item.name}" width="100">
-                <div class="cart-details">
-                    <h3>${item.name}</h3>
-                    <p>Price: ₹${item.price}</p>
-                    <div class="quantity">
-                        <button class="decrease" data-index="${index}">-</button>
-                        <span>${item.quantity}</span>
-                        <button class="increase" data-index="${index}">+</button>
-                    </div>
-                    <button class="remove" data-index="${index}">Remove</button>
-                </div>
-            `;
+// Checkout popup functions
+function showCheckoutPopup() {
+  const form = document.getElementById('checkoutForm');
+  form.reset();
+  document.getElementById('checkoutPopup').style.display = 'flex';
+}
 
-            cartContainer.appendChild(cartItem);
-        });
+function closeCheckoutPopup() {
+  document.getElementById('checkoutPopup').style.display = 'none';
+}
 
-        cartTotal.textContent = totalPrice;
+document.getElementById('checkoutForm').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-        attachEventListeners();
-    }
+  const payment = document.getElementById('payment').value;
 
-    function attachEventListeners() {
-        document.querySelectorAll(".increase").forEach(button => {
-            button.addEventListener("click", (event) => {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-                let index = event.target.getAttribute("data-index");
-                cart[index].quantity += 1;
-                localStorage.setItem("cart", JSON.stringify(cart));
-                loadCart();
-            });
-        });
+  if (!payment) {
+    alert("Please fill in all details.");
+    return;
+  }
 
-        document.querySelectorAll(".decrease").forEach(button => {
-            button.addEventListener("click", (event) => {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-                let index = event.target.getAttribute("data-index");
-                if (cart[index].quantity > 1) {
-                    cart[index].quantity -= 1;
-                } else {
-                    cart.splice(index, 1);
-                }
-                localStorage.setItem("cart", JSON.stringify(cart));
-                loadCart();
-            });
-        });
+  alert("Order placed successfully!");
+  localStorage.removeItem("cart");
+  document.getElementById("cart-items").innerHTML = "";
+  document.getElementById("cart-total").textContent = "0";
 
-        document.querySelectorAll(".remove").forEach(button => {
-            button.addEventListener("click", (event) => {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-                let index = event.target.getAttribute("data-index");
-                cart.splice(index, 1);
-                localStorage.setItem("cart", JSON.stringify(cart));
-                loadCart();
-            });
-        });
-
-        clearCartBtn.addEventListener("click", () => {
-            localStorage.removeItem("cart");
-            loadCart();
-        });
-    }
-    loadCart();
+  closeCheckoutPopup();
 });
